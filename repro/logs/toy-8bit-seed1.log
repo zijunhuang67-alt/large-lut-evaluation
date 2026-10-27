@@ -1,0 +1,9 @@
+Classification: toy / insecure / correctness-only
+
+$ ./build/lut-bench --input-bits 8 --digit-bits 4 --threads 2 --runs 1 --seed 1
+mode=toy (insecure) kind=cleartext input_bits=8 digit_bits=4 ring_dim=256 threads=2 runs=1 seed=1 slot_varying=0
+setup_s=0.017898 entries=256 scale_bits=48 cleaning=0 h=192 large_digits=3 level_budget=4,3 depth=22 logQP=1524.000000
+lut_preparation_s=0.000003
+run=1 evaluation_s=0.146195 checked=256 mismatches=0
+median_s=0.146195 mean_s=0.146195 min_s=0.146195 max_s=0.146195 lookups_per_second=1751.088885 checked=256 mismatches=0
+[exit_code=0]

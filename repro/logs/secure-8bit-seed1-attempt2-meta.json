@@ -1,0 +1,23 @@
+{
+  "attempt": 2,
+  "command": [
+    "./build/lut-bench",
+    "--secure",
+    "--kind",
+    "cleartext",
+    "--input-bits",
+    "8",
+    "--digit-bits",
+    "4",
+    "--threads",
+    "1",
+    "--runs",
+    "1",
+    "--seed",
+    "1"
+  ],
+  "outcome": "completed",
+  "exit_code": 0,
+  "wrapper_elapsed_s": 51.94705339300003,
+  "child_max_rss_kb": 12457216
+}

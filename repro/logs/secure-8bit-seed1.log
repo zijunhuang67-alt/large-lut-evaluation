@@ -1,0 +1,8 @@
+Task: author-artifact security-parameter correctness pilot
+Classification: secure pilot requested; benchmark not started
+
+$ OMP_NUM_THREADS=1 timeout 30m /usr/bin/time -v ./build/lut-bench --secure --kind cleartext --input-bits 8 --digit-bits 4 --threads 1 --runs 1 --seed 1
+timeout: failed to run command ‘/usr/bin/time’: No such file or directory
+[exit_code=127]
+
+The nonzero-exit stop condition was triggered before lut-bench started. Consequently there is no benchmark stdout, no GNU time resource report, and no runtime-observed cryptographic parameter set. No fallback timer, installation, parameter change, or rerun was attempted.

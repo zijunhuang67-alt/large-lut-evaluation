@@ -1,0 +1,59 @@
+Task: author-artifact security-parameter correctness pilot
+Working directory: /workspace/large-lut-evaluation
+PATH prefix used for CMake tools: /workspace/.tools/bin
+
+$ git rev-parse HEAD
+4b5ba0dc409266dc5f02d0c429085815799cab36
+[exit_code=0]
+
+$ git status --short
+?? repro/
+[exit_code=0]
+
+$ nproc
+5
+[exit_code=0]
+
+$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:            33Gi       696Mi        32Gi        20Ki        48Mi        32Gi
+Swap:             0B          0B          0B
+[exit_code=0]
+
+$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+overlay          32G  1.3M   30G   1% /
+tmpfs            17G     0   17G   0% /dev
+tmpfs           1.0M  4.0K 1020K   1% /run/codex-runtime-secrets
+none             17G   36K   17G   1% /tmp
+tmpfs            64M     0   64M   0% /dev/tty
+tmpfs            17G     0   17G   0% /tmp/codex-daemon-1000
+tmpfs            17G     0   17G   0% /workspace/.git
+tmpfs            17G     0   17G   0% /workspace/.agents
+tmpfs            17G     0   17G   0% /workspace/.codex
+tmpfs            17G     0   17G   0% /workspace/.aws
+tmpfs            17G     0   17G   0% /tmp/.git
+tmpfs            17G     0   17G   0% /tmp/.agents
+tmpfs            17G     0   17G   0% /tmp/.codex
+tmpfs            17G     0   17G   0% /tmp/.aws
+[exit_code=0]
+
+$ cmake --build build -j2
+[ 71%] Built target large_lut
+[100%] Built target lut-bench
+[exit_code=0]
+
+$ ctest --test-dir build --output-on-failure
+Internal ctest changing into directory: /workspace/large-lut-evaluation/build
+Test project /workspace/large-lut-evaluation/build
+    Start 1: cleartext
+1/3 Test #1: cleartext ........................   Passed    0.31 sec
+    Start 2: plaintext
+2/3 Test #2: plaintext ........................   Passed    0.22 sec
+    Start 3: ciphertext
+3/3 Test #3: ciphertext .......................   Passed    0.21 sec
+
+100% tests passed, 0 tests failed out of 3
+
+Total Test time (real) =   0.74 sec
+[exit_code=0]

@@ -1,0 +1,5 @@
+mode=secure kind=cleartext input_bits=8 digit_bits=4 ring_dim=65536 threads=1 runs=1 seed=1 slot_varying=0
+setup_s=15.125217 entries=256 scale_bits=48 cleaning=0 h=192 large_digits=4 level_budget=4,3 depth=22 logQP=1404.000000
+lut_preparation_s=0.000003
+run=1 evaluation_s=36.362695 checked=65536 mismatches=0
+median_s=36.362695 mean_s=36.362695 min_s=36.362695 max_s=36.362695 lookups_per_second=1802.286665 checked=65536 mismatches=0
